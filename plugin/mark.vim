@@ -193,18 +193,18 @@ highlight def link SearchSpecialSearchType MoreMsg
 "- mappings -------------------------------------------------------------------
 nnoremap <silent> <Plug>MarkSet   :<C-u>call mark#MarkCurrentWord()<CR>
 vnoremap <silent> <Plug>MarkSet   <C-\><C-n>:call mark#DoMark(mark#GetVisualSelectionAsLiteralPattern())<CR>
-nnoremap <silent> <Plug>MarkRegex :<C-u>call mark#MarkRegex('')<CR>
-vnoremap <silent> <Plug>MarkRegex <C-\><C-n>:call mark#MarkRegex(mark#GetVisualSelectionAsRegexp())<CR>
+"nnoremap <silent> <Plug>MarkRegex :<C-u>call mark#MarkRegex('')<CR>
+"vnoremap <silent> <Plug>MarkRegex <C-\><C-n>:call mark#MarkRegex(mark#GetVisualSelectionAsRegexp())<CR>
 nnoremap <silent> <Plug>MarkClear :<C-u>call mark#DoMark(mark#CurrentMark()[0])<CR>
-nnoremap <silent> <Plug>MarkAllClear :<C-u>call mark#ClearAll()<CR>
-nnoremap <silent> <Plug>MarkToggle :<C-u>call mark#Toggle()<CR>
+"nnoremap <silent> <Plug>MarkAllClear :<C-u>call mark#ClearAll()<CR>
+"nnoremap <silent> <Plug>MarkToggle :<C-u>call mark#Toggle()<CR>
 
-nnoremap <silent> <Plug>MarkSearchCurrentNext :<C-u>call mark#SearchCurrentMark(0)<CR>
-nnoremap <silent> <Plug>MarkSearchCurrentPrev :<C-u>call mark#SearchCurrentMark(1)<CR>
-nnoremap <silent> <Plug>MarkSearchAnyNext     :<C-u>call mark#SearchAnyMark(0)<CR>
-nnoremap <silent> <Plug>MarkSearchAnyPrev     :<C-u>call mark#SearchAnyMark(1)<CR>
-nnoremap <silent> <Plug>MarkSearchNext        :<C-u>if !mark#SearchNext(0)<Bar>execute 'normal! *zv'<Bar>endif<CR>
-nnoremap <silent> <Plug>MarkSearchPrev        :<C-u>if !mark#SearchNext(1)<Bar>execute 'normal! #zv'<Bar>endif<CR>
+"nnoremap <silent> <Plug>MarkSearchCurrentNext :<C-u>call mark#SearchCurrentMark(0)<CR>
+"nnoremap <silent> <Plug>MarkSearchCurrentPrev :<C-u>call mark#SearchCurrentMark(1)<CR>
+"nnoremap <silent> <Plug>MarkSearchAnyNext     :<C-u>call mark#SearchAnyMark(0)<CR>
+"nnoremap <silent> <Plug>MarkSearchAnyPrev     :<C-u>call mark#SearchAnyMark(1)<CR>
+"nnoremap <silent> <Plug>MarkSearchNext        :<C-u>if !mark#SearchNext(0)<Bar>execute 'normal! *zv'<Bar>endif<CR>
+"nnoremap <silent> <Plug>MarkSearchPrev        :<C-u>if !mark#SearchNext(1)<Bar>execute 'normal! #zv'<Bar>endif<CR>
 " When typed, [*#nN] open the fold at the search result, but inside a mapping or
 " :normal this must be done explicitly via 'zv'. 
 
@@ -215,36 +215,36 @@ endif
 if !hasmapto('<Plug>MarkSet', 'v')
 	vmap <unique> <silent> <Leader>m <Plug>MarkSet
 endif
-if !hasmapto('<Plug>MarkRegex', 'n')
-	nmap <unique> <silent> <Leader>r <Plug>MarkRegex
-endif
-if !hasmapto('<Plug>MarkRegex', 'v')
-	vmap <unique> <silent> <Leader>r <Plug>MarkRegex
-endif
+" if !hasmapto('<Plug>MarkRegex', 'n')
+" 	nmap <unique> <silent> <Leader>r <Plug>MarkRegex
+" endif
+" if !hasmapto('<Plug>MarkRegex', 'v')
+" 	vmap <unique> <silent> <Leader>r <Plug>MarkRegex
+" endif
 if !hasmapto('<Plug>MarkClear', 'n')
-	nmap <unique> <silent> <Leader>n <Plug>MarkClear
+	nmap <unique> <silent> <Leader>mn <Plug>MarkClear
 endif
 " No default mapping for <Plug>MarkAllClear. 
 " No default mapping for <Plug>MarkToggle. 
 
-if !hasmapto('<Plug>MarkSearchCurrentNext', 'n')
-	nmap <unique> <silent> <Leader>* <Plug>MarkSearchCurrentNext
-endif
-if !hasmapto('<Plug>MarkSearchCurrentPrev', 'n')
-	nmap <unique> <silent> <Leader># <Plug>MarkSearchCurrentPrev
-endif
-if !hasmapto('<Plug>MarkSearchAnyNext', 'n')
-	nmap <unique> <silent> <Leader>/ <Plug>MarkSearchAnyNext
-endif
-if !hasmapto('<Plug>MarkSearchAnyPrev', 'n')
-	nmap <unique> <silent> <Leader>? <Plug>MarkSearchAnyPrev
-endif
-if !hasmapto('<Plug>MarkSearchNext', 'n')
-	nmap <unique> <silent> * <Plug>MarkSearchNext
-endif
-if !hasmapto('<Plug>MarkSearchPrev', 'n')
-	nmap <unique> <silent> # <Plug>MarkSearchPrev
-endif
+" if !hasmapto('<Plug>MarkSearchCurrentNext', 'n')
+" 	nmap <unique> <silent> <Leader>* <Plug>MarkSearchCurrentNext
+" endif
+" if !hasmapto('<Plug>MarkSearchCurrentPrev', 'n')
+" 	nmap <unique> <silent> <Leader># <Plug>MarkSearchCurrentPrev
+" endif
+" if !hasmapto('<Plug>MarkSearchAnyNext', 'n')
+" 	nmap <unique> <silent> <Leader>/ <Plug>MarkSearchAnyNext
+" endif
+" if !hasmapto('<Plug>MarkSearchAnyPrev', 'n')
+" 	nmap <unique> <silent> <Leader>? <Plug>MarkSearchAnyPrev
+" endif
+" if !hasmapto('<Plug>MarkSearchNext', 'n')
+" 	nmap <unique> <silent> * <Plug>MarkSearchNext
+" endif
+" if !hasmapto('<Plug>MarkSearchPrev', 'n')
+" 	nmap <unique> <silent> # <Plug>MarkSearchPrev
+" endif
 
 
 "- commands -------------------------------------------------------------------
